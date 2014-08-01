@@ -45,8 +45,10 @@ function todoDelete() // оъбявляем функцию todoDelete, кото�
 function todoAdd() // оъбявляем функцию todoAdd, которая будет добавлять новый список дел
 {
     // get from $_POST
-    $title; //объявляем две переменные
-    $data;
+    
+    $title=$_POST["title"];
+    $data=$_POST["data"];
+    include __DIR__."/app/views/add.php";
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +57,7 @@ function todoAdd() // оъбявляем функцию todoAdd, которая 
     <title></title>
 </head>
 <body>
-<h1>Add</h1>
+<!-- <h1>Add</h1> -->
 </body>
 </html>
 
