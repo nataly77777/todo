@@ -16,17 +16,12 @@ if ($request->getRoute() == "delete") { //  если функция getRoute() �
 }
 
 if ($request->getRoute() == "add") { //  если функция getRoute() объекта $request возвращает значение add
-    todoAdd();                      //  // выполняем функцию  todoAdd()
+    todoAdd($request);                      //  // выполняем функцию  todoAdd()
  }
 
 function todoList($request) // оъбявляем функцию todoList
 {
     $pageTitle = "ToDo List"; // 
-    // echo $request->getParam("age");объявляем переменную $pageTitle, присваиваем ей значение - строку "ToDo List", мы будем ее использовать в коде list.php, чтобы слздать заголовок
-    // echo "<br/>";
-    // echo $request->getParam("name");
-    // echo "<br/>";
-    // echo $request->getParam("fname", "...");
     
     include __DIR__."/app/views/list.php";// подключаем код из файла list.php
 }
@@ -42,12 +37,10 @@ function todoDelete() // оъбявляем функцию todoDelete, кото�
 }
 
 // http://localhost:12345/?r=add
-function todoAdd() // оъбявляем функцию todoAdd, которая будет добавлять новый список дел
+function todoAdd($request) // оъбявляем функцию todoAdd, которая будет добавлять новый список дел
 {
-    // get from $_POST
-    
-    $title=$_POST["title"];
-    $data=$_POST["data"];
+    // echo $request->getPost("task");
+
     include __DIR__."/app/views/add.php";
 ?>
 
