@@ -47,17 +47,17 @@
         <h1>Новая задача</h1>
 
 
-         <form role="form" action="/?r=add" method="post">
+         <form role="form" action="/?r=save" method="post">
           <div class="form-group">
-            <label for="task">Название</label>
-            <input type="text" class="form-control" id="task" name="task" placeholder="Название">
+            <label for="title">Название</label>
+            <input type="text" class="form-control" id="task" name="title" placeholder="Название">
           </div>
           <div class="checkbox">
             <label>
-              <input type="checkbox"> Выполнено
+              <input type="checkbox" name="resolved" value="on"> Выполнено
             </label>
           </div>
-          <button type="submit" class="btn btn-default"><a href="/?r=list">Добавить</a></button>
+          <button type="submit" class="btn btn-default">Добавить</button>
         </form>
       
       </div>

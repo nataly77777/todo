@@ -38,31 +38,41 @@
         <ul class="nav nav-pills pull-right">
           <li class="active"><a href="/?r=list">Home</a></li>
           <li><a href="/?r=add">Добавить</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="/about.php">About</a></li>
+          <li><a href="/contact.php">Contact</a></li>
         </ul>
         <h3 class="text-muted">Project name</h3>
       </div>
-       <table class="table table-bordered table-hover" >
-        <tbody>
-       <tr>
-          <th>№</th>
-          <th>Задача</th>
-       </tr>
-         <tr>
-          <td>1</td>
-          <td>йййййй</td>
-        </tr>
+        <div>
+        <table class="table">
+          <thead>
+            <tr>
+             
+            </tr>
+          </thead>
+          <tbody>
+        
+        <?php while($row=$query->fetch()):?>
+        
         <tr>
-          <td>2</td>
-          <td>ццццццццц</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>уууууууу</td>
-        </tr>
-        </tbody>
-       </table>
+           <td><?php echo $row->id; ?></td>
+           <td><?php echo $row->title; ?></td>
+           <td><?php echo $row->resolved; ?></td>
+           <td><?php echo $row->createdAt; ?></td>
+          
+           <td><a href="/?r=delete&id=<?php echo $row->id;?>">Удалить</a></td>
+            <td><a href="/?r=show&id=<?php echo $row->id;?>">Посмотреть</a></td>
+            <td><a href="/?r=update&id=<?php echo $row->id;?>">Изменить</a></td>
+          </tr>
+          <?php endwhile; ?>  
+          </tbody>
+        </table>
+      </div>
+
+      <div class="row marketing">
+        <div class="col-lg-6">&nbsp;</div>
+        <div class="col-lg-6">&nbsp;</div>
+      </div>
       
 
       <div class="footer">

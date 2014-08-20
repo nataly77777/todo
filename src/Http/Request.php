@@ -36,13 +36,13 @@ class Request // объявляем класс Request
         return $_GET["r"]; // в противном случае возвращаем значение элемента r массива $_GET
     }
 
-    // public function getParam($name, $default="") // объявляем функцию getParam с параметрами $name и $default=""
-    // {
-    //     if (isset($_GET[$name])) { // если в массиве $_GET существует элемент с ключем $name,
-    //         return $_GET[$name];  // то возвращаем его значение
-    //     }
-    //     return $default;        // в противном случае возвращаем значение параметра $default, то есть пустую строку
-    // }
+    public function getParam($name, $default="") // объявляем функцию getParam с параметрами $name и $default=""
+    {
+        if (isset($_GET[$name])) { // если в массиве $_GET существует элемент с ключем $name,
+            return $_GET[$name];  // то возвращаем его значение
+        }
+        return $default;        // в противном случае возвращаем значение параметра $default, то есть пустую строку
+    }
 
      public function getPost($name, $default="")
     {
